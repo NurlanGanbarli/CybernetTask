@@ -7,7 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.login-page .content {
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 5px 5px 10px #e2e2e2;
+  background: #ffffff;
+}
+
+.card img {
+  width: 100%;
+}
+
