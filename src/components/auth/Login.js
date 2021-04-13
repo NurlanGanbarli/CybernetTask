@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios'
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
-export default function Login(props) {
+const Login = ({login, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -13,27 +16,13 @@ export default function Login(props) {
 
     const onSubmit = async e => {
         e.preventDefault();
-
-        const config = {
-            headers: {
-                "Content-type": "application/json"
-            }
-        }
-
-        try {
-            const res = await axios.get('http://localhost:5000/user', config)
-            console.log(res);
-            if (res.data.username === username && res.data.password === password) {
-                console.log('truee');
-                props.history.push('/products')
-            } else {
-            
-            }
-        } catch (error) {
-            console.log(error)
-        }
+        login(username, password);
     }
 
+    // Redirect if logged in
+    if (isAuthenticated) {
+        return <Redirect to='/products'/>
+    }
 
     return (
         <div className="login-page">
@@ -54,3 +43,16 @@ export default function Login(props) {
     </div>
     )
 }
+
+
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+
+export default connect(mapStateToProps, { login })(Login)

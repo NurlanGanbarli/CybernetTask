@@ -5,8 +5,8 @@
     },
 
     "products": [
-        { "id": 1, "title": "Product 1", "description": "fdshgfhsdgf dsgfjsdhgfjsdf jsdgfjsdfsdf jsgd fj dsjf", "photo": "../../../product1.jpg" },
-        { "id": 2, "title": "Product 2", "description": "fdshgfhsdgf dsgfjsdhgfjsdf jsdgfjsdfsdf jsgd fj dsjf", "photo": "../../../product2.jpg" },
-        { "id": 3, "title": "Product 3", "description": "fdshgfhsdgf dsgfjsdhgfjsdf jsdgfjsdfsdf jsgd fj dsjf", "photo": "../../../product3.jpg" }
+        { "id": 1, "title": "Product 1", "description": "Samsung A 50 Mobile Phone", "photo": "../../../product1.jpg" },
+        { "id": 2, "title": "Product 2", "description": "OnePlus 7T Mobile Phone Samsung", "photo": "../../../product2.jpg" },
+        { "id": 3, "title": "Product 3", "description": "Samsung S20", "photo": "../../../product3.jpg" }
     ]
 }

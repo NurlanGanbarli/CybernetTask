@@ -4,21 +4,28 @@ import './App.css';
 import Login from './components/auth/Login';
 import ProductDetail from './components/products/ProductDetail';
 import Products from './components/products/Products';
+import { logout } from './actions/auth'
+
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   
     return (
-        <Router>
-            <Fragment>
-                <Route exact path='/' component={Login}/>
-                <section className='container'>
-                    <Switch>
-                        <Route exact path='/products' component={Products}/>
-                        <Route exact path='/products/:id' component={ProductDetail}/>
-                    </Switch>
-                </section>
-            </Fragment>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Fragment>
+                    <Route exact path='/' component={Login}/>
+                    <section className='container'>
+                        <Switch>
+                            <Route exact path='/products' component={Products}/>
+                            <Route exact path='/products/:id' component={ProductDetail}/>
+                        </Switch>
+                    </section>
+                </Fragment>
+            </Router>
+        </Provider>
     );
 }
 
