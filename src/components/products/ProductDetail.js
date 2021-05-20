@@ -28,7 +28,7 @@ function ProductDetail() {
                 console.log(error)
             }
         })()
-    }, [])
+    }, [id])
 
     return (
         <div className='product-detail'>
